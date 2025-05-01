@@ -27,12 +27,12 @@ export const Route = ({
         removeFTRoute(flightTableID, route.id)
     };
 
-    const handleUpdateRouteFrom = () => {
-        // updateFTRoutesFrom()
+    const handleUpdateRouteFrom = (newFrom: string) => {
+        updateFTRoutesFrom(flightTableID, route.id, newFrom)
     };
 
-    const handleUpdateRouteTo = () => {
-        //updateFTRoutesTo();
+    const handleUpdateRouteTo = (newTo: string) => {
+        updateFTRoutesTo(flightTableID, route.id, newTo);
     }
 
     const handleToggleFTIsBooked = () => {
@@ -49,13 +49,13 @@ export const Route = ({
                         <Button onClick={handleRemoveFTRoute} title={'X'}/>
                     </td>
                     <td className={`${styles.ftCell} ${styles.pointerCursor}`}>
-                        <UpdateItem oldTitle={route.from} callBack={() => 'handleUpdateRouteFrom'}/>
+                        <UpdateItem oldTitle={route.from} callBack={handleUpdateRouteFrom}/>
                     </td>
                     <td className={`${styles.ftCell} ${styles.pointerCursor}`}>
                         ➔
                     </td>
                     <td className={`${styles.ftCell} ${styles.pointerCursor}`}>
-                        <UpdateItem oldTitle={route.to} callBack={() => 'handleUpdateRouteTo'}/>
+                        <UpdateItem oldTitle={route.to} callBack={handleUpdateRouteTo}/>
                     </td>
                     <td className={styles.checkboxContainer}>
                         <label>

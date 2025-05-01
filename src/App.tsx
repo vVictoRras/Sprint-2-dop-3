@@ -99,6 +99,7 @@ export const App = ()=> {
     };
 
     const updateFTRoutesFrom = (flightTableID: string, routeID: string, newFrom: string) => {
+        console.log('From')
         setFlightTables(flightTables.map(ft =>
             ft.flightTableID === flightTableID ? {
                 ...ft,
@@ -110,6 +111,7 @@ export const App = ()=> {
     };
 
     const updateFTRoutesTo = (flightTableID: string, routeID: string, newTo: string) => {
+        console.log('To')
         setFlightTables(flightTables.map(ft =>
             ft.flightTableID === flightTableID ? {
                 ...ft,
